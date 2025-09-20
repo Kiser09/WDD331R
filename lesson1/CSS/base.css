@@ -86,6 +86,11 @@
         text-decoration: none;
     }
 
+    .post-content a:active {
+        color: #DEB887;
+        text-decoration: none;
+    }
+
     .post-content figure{
         margin: 0;
     }
