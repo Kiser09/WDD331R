@@ -2,7 +2,7 @@
 const link =[
     {
         label: "Week 1 Notes",
-        url: "lesson1/index.html"
+        url: "lesson1/reviewwebpage.html"
     }
     //add more for each week.
 ];
