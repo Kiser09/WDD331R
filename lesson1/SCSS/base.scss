@@ -29,6 +29,14 @@ $break-large: 56.25em;
 } 
 
 //============================================
+//Boarders Mixins
+//============================================
+@mixin greyborder(){
+    border-top: 2px solid $boarders-colors;
+    border-bottom: 2px solid $boarders-colors;
+}
+
+//============================================
 //CSS
 //============================================
     body{
@@ -56,8 +64,7 @@ $break-large: 56.25em;
 //===========================================
 /**Navigation CSS**/     
     nav{
-        border-top: 2px solid $boarders-colors;
-        border-bottom: 2px solid $boarders-colors;
+        @include greyborder();
 
         ul{
         list-style-type: none;
@@ -97,8 +104,7 @@ $break-large: 56.25em;
 //===========================================
 /*Post-Content CSS*/
     section {
-        border-top: 2px solid $boarders-colors;
-        border-bottom: 2px solid $boarders-colors;
+        @include greyborder();
     }
 
     .post-content {
@@ -165,12 +171,12 @@ $break-large: 56.25em;
         justify-content: end;
         align-items: center;
         gap: 1.5rem;
-    }
 
-    nav ul li{
-        padding-right: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        li{
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
 
     main {
