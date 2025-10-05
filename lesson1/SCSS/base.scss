@@ -1,0 +1,200 @@
+/*Base/small CSS for webpage*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+//==========================================
+//variables
+//==========================================
+//colors variables
+$boarders-colors: #d0d0d0;
+$body-background-color: #333;
+$dark-knight: #666;
+$been-activated: #DEB887;
+$hover-craft: #00ddff;
+//font variables
+$header-nav-fonts: "Lora";
+$main-body-fonts: Helvetica, Arial, Sans-serif;
+
+//===========================================
+//Breakpoint Mixins see bottom of page for use.
+//===========================================
+$break-large: 56.25em;
+
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (max-width: $break-large) { @content; }
+    }
+    @else {
+        @media ($break) { @content; }
+    }
+} 
+
+//============================================
+//CSS
+//============================================
+    body{
+        font-family: $main-body-fonts;  /*main body for the base page*/
+        color: $body-background-color;
+        margin: 0;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    h1, h2, nav {
+        font-family: "Lora"; 
+    }
+
+/*Header CSS*/
+    header h1 {
+        font-size: 3.75rem;
+        text-align: center;
+        margin: 0;
+        padding: 2rem 2rem;
+    }
+
+//===========================================
+//Nested Navigation
+//===========================================
+/**Navigation CSS**/     
+    nav{
+        border-top: 2px solid $boarders-colors;
+        border-bottom: 2px solid $boarders-colors;
+
+        ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        padding: 0;
+        margin: 0;
+
+            li a, li a:visited {
+                text-transform: uppercase;
+                color: $dark-knight;
+            }
+
+           li a:hover { 
+                color: $hover-craft;
+                text-decoration: none; /*not sure if I needed these since I already had the hyperlink removal. */
+            }
+
+            li a:active {
+                color: $been-activated;
+                text-decoration: none;
+            }
+        }
+    }
+
+/**Hyperlink decoration removal**/
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+//===========================================
+//Nested Post-content
+//===========================================
+/*Post-Content CSS*/
+    section {
+        border-top: 2px solid $boarders-colors;
+        border-bottom: 2px solid $boarders-colors;
+    }
+
+    .post-content {
+        padding-left: 10px;
+
+        a {
+            color: $dark-knight;
+            padding-top: 10px;  
+        }
+
+        a:hover { 
+            color: $hover-craft;
+            text-decoration: none;
+        }
+
+        a:hover { 
+            color: $hover-craft;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: $been-activated;
+            text-decoration: none;
+        }
+
+        figure{
+            margin: 0;
+            img {
+                display: block;
+                margin-inline: auto;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+/*Post-date CSS*/
+    .post-date {
+        text-align: right;
+        padding-right: 10px;
+        padding-top: 30px;
+        padding-bottom: 0;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+//=============================================
+//Mixins
+/*Breakpoint for large viewport css*/
+@media (min-width: $break-large) {
+
+    body {
+        font-size: 1.75rem;
+    }
+
+    header h1{
+        font-size: 5rem;
+    }
+
+    nav ul{
+        display: grid;
+        grid-row: 1;
+        grid-auto-flow: column;
+        justify-content: end;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    nav ul li{
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    main {
+        padding-top: 30px;
+    }
+    
+    article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        border-top: none;
+        border-left: 2px solid $boarders-colors;
+    }
+
+    .post-date {
+        grid-column: 1/2;
+        padding-left: 20px;
+        padding-top: 0;
+    }
+
+    .post-content {
+        grid-column: 2/4;
+    }
+
+}

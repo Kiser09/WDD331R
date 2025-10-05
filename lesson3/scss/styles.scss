@@ -1,0 +1,130 @@
+//color variables
+$body-background-color: darkred;
+$form-background-color: tan;
+$input-color: #E8D6BF;
+$headlines-color : white;
+
+//======================================
+//Breakpoint Mixins
+//======================================
+//set breakpoint sizes
+$break-small: 20em;
+$break-medium: 31em;
+$break-large: 60em;
+
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (max-width: $break-large) { @content; }
+    }
+    @else if $break == medium {
+        @media (max-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+        @media (max-width: $break-small) { @content; }
+    } 
+    @else {
+        @media ($break) { @content; }
+    }
+} 
+
+//====================================
+//Center Mixin
+//====================================
+@mixin center($width, $max-width: 960px) {
+  width: $width;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//calls in the center mixin to the css page.
+#content {
+    @include center(80%);
+    padding: 2rem;
+}
+
+//=================================
+//Nested Section
+//=================================
+#contactform {
+    background-color: $form-background-color;
+    padding: .08rem;
+    box-sizing: border-box;
+
+    label {
+        display: block;
+    }
+
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        margin-top: 1rem;
+        padding: 0.3rem 0.8rem;
+        cursor: pointer;
+    }
+
+    @media (min-width: $break-medium ){
+        & {
+            @include center (100%);
+        }
+    }
+
+    @media (min-width: $break-small) {
+        & {
+          @include center (100%);
+        } 
+    }
+}
+
+//==================================
+//Flexbox Mixin: for older browsers
+//==================================
+@mixin flex-container($axis, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: $axis $wrap;
+    -ms-flex-flow: $axis $wrap;
+    flex-flow: $axis $wrap;
+}
+
+//calls in the flexbox mixin to the css page.
+fieldset > div {
+    @include flex-container(column);     
+}
+
+@media (min-width: $break-medium) {
+    fieldset > div {
+        @include flex-container(row);
+        padding-bottom: 15px;
+        align-items: center;
+    }
+
+    fieldset > div > label {
+        width: 250px;
+        text-align: right;
+        padding-right: 15px;
+        flex-shrink: 0;
+    }
+
+    fieldset > div > input,
+    fieldset > div, textarea {
+        flex: 1;
+        width: auto;
+    } 
+}
+
+body {
+    background-color: $body-background-color;    
+    }
+
+h1 {
+    color: $headlines-color;
+}
