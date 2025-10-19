@@ -1,0 +1,149 @@
+/*------------*\
+#Import
+\*------------*/
+
+@use "settings" as s;
+
+
+
+/*------------*\
+#Cart
+\*------------*/
+.cart {
+    background-color: s.$bordercolor;
+    width: 300px;
+    padding: 20px;
+
+    &__header {
+      display: flex;
+      color: s.$darkshadow;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    &__title {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    &__count {
+      color: s.$cartcolor;
+      background-color: s.$darkshadow;
+      border-radius: 50%;
+      width: 30px;
+      height: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    // Cart Items List
+    &__list {
+      list-style: none;
+      border: 1px solid s.$shadowcolor;
+      border-radius: 8px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid s.$shadowcolor;
+      padding: 12px 0;
+    }
+
+    &__item:first-child {
+      border-top: none;
+    }
+
+    &__item-info {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+    }
+
+    &__item-name {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    &__item-desc {
+      font-size: 13px;
+      color: s.$darkshadow;
+    }
+
+    &__item-price {
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    &__promo-label, &__promo-price {
+      color: s.$promocolor;
+      font-weight: bold;
+    }
+
+    &__promo-price {
+      padding-right: 10px;
+    }
+
+    &__promo-code{
+      color: s.$promocolor;
+      font-size: 13px;
+    }
+
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid s.$shadowcolor;
+      padding: 10px 10px;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    &__total-title{
+        padding-left: 10px;
+    }
+
+    &__total-amount {
+        padding-right: 10px;
+    }
+
+
+
+    // Promo Row
+    &__promo-form {
+      display: flex;
+      margin-top: 20px;
+      border: 1px solid s.$darkshadow;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    &__promo-input {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid s.$cartcolor;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    &__promo-button {
+      background: s.$darkshadow;
+      color: s.$cartcolor;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    &__promo-button:hover {
+      background: s.$hoverbackground;
+    }
+}

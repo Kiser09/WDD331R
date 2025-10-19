@@ -1,0 +1,52 @@
+$articleFont: helvetica, arial, sans-serif;
+$boardercolor: #888;
+$tagcolor: blue;
+$datecolor: grey;
+
+
+
+
+
+/*----------------*\
+#body
+\*----------------*/
+
+body {
+    font-family: $articleFont;
+}
+
+
+
+
+
+/*----------------*\
+#Summary styles. 
+\*----------------*/
+
+//nesting summary
+.summary {
+    box-shadow: 1px 1px 4px 1px $boardercolor; //color border variable
+    border-radius: 3px;
+    max-width: 360px;
+    &__title {
+        margin-bottom: 0;
+    }
+    &__img {
+        width: 100%
+    }
+    &__body {
+        padding: 1em;
+    }
+    &__tags {
+        color: $tagcolor; //tag color variable from theme
+        font-weight: bold;
+        margin: 0;
+    }
+    &__date {
+        color: $datecolor;
+        margin-top: 0.3em;
+    }
+    &__link a {
+        text-decoration: none;
+    }
+}

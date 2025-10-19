@@ -1,0 +1,157 @@
+//*------------*\
+//#Variables
+//*------------*/
+$cartfont: helvetica, arial, sans-serif;
+$promocolor: green;
+$cartcolor: #ddd;
+$shadowcolor: #7b7b7b;
+$darkshadow: #555;
+$hoverbackground: #333;
+$bordercolor: #eee;
+
+
+/*------------*\
+#Body
+\*------------*/
+
+body {
+    display: flex;
+    font-family: $cartfont;
+    padding: 40px;
+    justify-content: center;
+}
+
+
+/*------------*\
+#Cart
+\*------------*/
+.cart {
+    background-color: $bordercolor;
+    width: 300px;
+    padding: 20px;
+
+    &__header {
+      display: flex;
+      color: $darkshadow;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    &__title {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    &__count {
+      color: $cartcolor;
+      background-color: $darkshadow;
+      border-radius: 50%;
+      width: 30px;
+      height: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__list {
+      list-style: none;
+      border: 1px solid $shadowcolor;
+      border-radius: 8px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid $shadowcolor;
+      padding: 12px 0;
+    }
+
+    &__item-info {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+    }
+
+    &__item-name {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    &__item-desc {
+      font-size: 13px;
+      color: $darkshadow;
+    }
+
+    &__item-price {
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    &__promo-label, &__promo-price {
+      color: $promocolor;
+      font-weight: bold;
+    }
+
+    &__promo-price {
+      padding-right: 10px;
+    }
+
+    &__promo-code{
+      color: $promocolor;
+      font-size: 13px;
+    }
+
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid $shadowcolor;
+      padding: 10px 10px;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    &__total-title{
+        padding-left: 10px;
+    }
+
+    &__total-amount {
+        padding-right: 10px;
+    }
+
+    &__promo-form {
+      display: flex;
+      margin-top: 20px;
+      border: 1px solid $darkshadow;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    &__promo-input {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid $cartcolor;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    &__promo-button {
+      background: $darkshadow;
+      color: $cartcolor;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    &__promo-button:hover {
+      background: $hoverbackground;
+    }
+}
+

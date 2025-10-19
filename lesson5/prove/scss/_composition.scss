@@ -1,0 +1,20 @@
+/*------------*\
+#Import
+\*------------*/
+
+@use "settings" as s;
+
+
+
+
+
+/*------------*\
+#Body
+\*------------*/
+
+body {
+    display: flex;
+    font-family: s.$cartfont;
+    padding: 40px;
+    justify-content: center;
+}

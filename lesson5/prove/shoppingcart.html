@@ -1,0 +1,58 @@
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Blayne Kiser">
+        <link rel="stylesheet" href="scss/ponder.css">
+    </header>
+
+    <body>
+        <div class="cart">
+  <div class="cart__header">
+    <h2 class="cart__title">Your cart</h2>
+    <div class="cart__count">3</div>
+  </div>
+
+  <ul class="cart__list">
+    <li class="cart__item">
+      <div class="cart__item-info">
+        <span class="cart__item-name">Product name</span>
+        <p class="cart__item-desc">Brief description</p>
+      </div>
+      <div class="cart__item-price">$12</div>
+    </li>
+    <li class="cart__item">
+      <div class="cart__item-info">
+        <span class="cart__item-name">Second product</span>
+        <p class="cart__item-desc">Brief description</p>
+      </div>
+      <div class="cart__item-price">$8</div>
+    </li>
+    <li class="cart__item">
+      <div class="cart__item-info">
+        <span class="cart__item-name">Third item</span>
+        <p class="cart__item-desc">Brief description</p>
+      </div>
+      <div class="cart__item-price">$5</div>
+    </li>
+
+    <li class="cart__item | cart__item--discount |">
+      <div class="cart__item-info">
+        <span class="cart__promo-label">Promo code</span>
+        <p class="cart__promo-code">EXAMPLECODE</p>
+      </div>
+      <div class="cart__promo-price">-$5</div>
+    </li>
+    <li class="cart__total">
+        <span class="cart__total-title">Total (USD)</span>
+        <strong class="cart__total-amount">$20</strong>
+    </li>
+  </ul>
+
+  <div class="cart__promo-form">
+    <input type="text" class="cart__promo-input" placeholder="Promo code" />
+    <button class="cart__promo-button">Redeem</button>
+  </div>
+</div>
+    </body>
+</html>

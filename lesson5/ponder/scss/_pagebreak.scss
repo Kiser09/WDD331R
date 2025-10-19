@@ -1,0 +1,59 @@
+//----------------*\
+//#Breakpoint
+//----------------*/
+
+$break-large: 60em;
+$break-small: 440px;
+
+@mixin breakpoint($break) {
+  @if $break == large {
+    @media (min-width: $break-large) { @content; }
+  }
+  @else if $break == small {
+    @media (min-width: $break-small) { @content; }
+  }
+  @else {
+    @media ($break) { @content; }
+  }
+}
+
+
+
+
+
+/*----------------*\
+#Media small screen. 
+\*----------------*/
+
+@media (min-width: #{$break-small}) {
+  .summary {
+    display: flex;
+    max-width: 500px;
+  }
+  .summary__img{
+    width: 40%;
+    order: 2;
+  }
+}
+
+
+
+
+
+/*----------------*\
+#Media large screen. 
+\*----------------*/
+@media (min-width: #{$break-large}) {
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .summary__img{
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+  }
+  .summary__body {
+    grid-column: 1;
+  }
+} 
