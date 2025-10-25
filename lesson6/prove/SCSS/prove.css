@@ -1,0 +1,27 @@
+/*------------*\
+#Body
+\*------------*/
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*------------*\
+#Container
+\*------------*/
+.container {
+  height: 25vmin;
+  width: 25vmin;
+  background-color: teal;
+}
+.container__one {
+  padding: 1vmin;
+}
+
+/*# sourceMappingURL=prove.css.map */

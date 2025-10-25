@@ -1,0 +1,19 @@
+//*------------*\
+//#Variables
+//*------------*/
+$containercolor: teal;
+
+/*------------*\
+#Body
+\*------------*/
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html,
+body {
+    height: 100%;
+}

@@ -1,0 +1,21 @@
+//------------*\
+//#Import
+//------------*/
+
+@use "global" as global;
+
+
+
+
+/*------------*\
+#Container
+\*------------*/
+.container {
+  height: 25vmin;
+  width: 25vmin;
+  background-color: global.$containercolor; //color linked to _global.scss
+
+  &__one {
+    padding: 1vmin;
+  }
+}
