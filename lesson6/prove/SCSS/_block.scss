@@ -7,6 +7,36 @@
 
 
 
+
+//------------*\
+//#@mixin
+//------------*/
+
+//circles have uniform shape
+@mixin circle-dimension {
+  height: 25%;
+  width: 25%;
+  background-color: global.$circlecolor;
+  border-radius: 50%;
+}
+
+//centers circles within container
+@mixin center-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin semi-circle{
+  width: 12%;
+  height: 24%;
+  background-color: global.$circlecolor;
+}
+
+
+
+
+
 /*------------*\
 #Container
 \*------------*/
@@ -18,4 +48,132 @@
   &__one {
     padding: 1vmin;
   }
+
+  &__two,
+  &__three,
+  &__four {
+    @include center-circle; //circles 2-4 are centered
+  }
+}
+
+
+/*Combinging hover with morphing cricle*/
+.container__two:hover .circle--morphing {
+  border-radius: 0;
+  background-color: white;
+  transform: rotate(90deg);
+}
+
+
+
+
+
+/*------------*\
+#Circles
+\*------------*/
+
+/*CSS for the orbiting cirlce*/
+.circle--orbiting {
+  @include circle-dimension;
+  animation: orbit 3s linear infinite;
+}
+
+/*CSS for the morphing circle*/
+.circle--morphing{
+  @include circle-dimension;
+  transition: border-radius .5s ease,
+              background-color .5s ease,
+              transform .5s ease .5s;
+  animation: morphing-circle-square 3s linear infinite;
+}
+
+/*CSS for the sliced circle*/
+
+.circle__half{
+  &--left {
+    @include semi-circle;
+    border-radius: 100px 0 0 100px;
+    animation: move-left 2s ease-in-out infinite alternate;
+  }
+
+  &--right {
+    @include semi-circle;
+    border-radius: 0 100px 100px 0;
+    animation: move-right 2s ease-in-out infinite alternate;
+  }
+}
+
+/*CSS for the beating ciricle*/
+.circle--beat {
+  @include circle-dimension;
+  animation: double-beat 2s linear infinite;
+}
+
+
+
+
+
+/*------------*\
+#Keyframes
+\*------------*/
+
+/*Keyframe for circle--orbiting around in the square container*/
+@keyframes orbit {
+  0% { transform: translate(0,0); }
+  5% { transform: translate(0,0); }
+  25% { transform: translate(300%,0%); }
+  30% { transform: translate(300%,0%); }
+  50% { transform: translate(300%,300%); }
+  55% { transform: translate(300%,300%); }
+  75% { transform: translate(0%,300%); }
+  80% { transform: translate(0%,300%); }
+  100% { transform: translate(0%,0%); }
+}
+/*Keyframes for circle--morphing into square with color changes*/
+@keyframes morphing-circle-square {
+  50% {
+    border-radius: 0%;
+    background-color: white;
+  }
+  75% {transform: rotate(90deg);}
+  100% {
+    border-radius: 50%;
+    background-color: global.$circlecolor;
+  }
+}
+
+/*Keyframes for circle__half: animation cuts circle in half*/
+/* Keyframes for moving the left semi-circle */
+@keyframes move-left {
+  0% {transform: translateX(0%);}
+  10% {transform: translateX(0%);} /*Start position: overlapping*/
+  45% {transform: translateX(-30%);}
+  55% {transform: translateX(-30%);} /*End position: moved left*/
+  90% {transform: translateX(0%);}
+  100% {transform: translateX(0%);}
+}
+
+/* Keyframes for moving the right semi-circle */
+@keyframes move-right {
+  0% {transform: translateX(0%);}
+  10% {transform: translateX(0%);} /*Start position: overlapping*/
+  45% {transform: translateX(30%);}
+  55% {transform: translateX(30%);} /*End position: moved right*/
+  90% {transform: translateX(0%);}
+  100% {transform: translateX(0%);}
+}
+
+/*Keyframes for circle--beat*/
+@keyframes double-beat {
+  0% {transform: scale(1);}
+  10% {transform: scale(1);}
+  15% {transform: scale(1.2);}
+  25% {transform: scale(1);}
+  35% {transform: scale(1.2);}
+  45% {transform: scale(1);}
+  70% {transform: scale(1);}
+  75% {transform: scale(1.2);}
+  85% {transform: scale(1);}
+  95% {transform: scale(1.2);}
+  100% {transform: scale(1);}
 }
