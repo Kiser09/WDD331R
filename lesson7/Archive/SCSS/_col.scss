@@ -1,0 +1,23 @@
+/*------------*\
+#col-grid
+\*------------*/
+
+.col-grid  {
+  display: flex;
+  flex-flow: column wrap;
+  height: 1800px;
+  gap: .5rem;
+  align-content: center;
+
+  .card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
