@@ -1,0 +1,148 @@
+//--------------------*\
+//#Import varaibles
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#alert
+\*--------------------*/
+
+.alert {
+  position: relative;
+  display: flex;
+  gap: var(--s-2); // consistent spacing between them
+
+  &__border {
+    display: flex;
+    border-right: 3px solid grey;
+    align-items: center;
+    height: 5rem;
+    padding-right: var(--s-2);
+    padding-left: var(--s-2);
+    margin-right: var(--s-2);
+    }
+
+   &__badge {
+    &--heading{
+      --wght: 700;
+      @include global.gelasio-text;
+      text-transform: uppercase;
+    }
+  }
+
+  &--description {
+    @include global.recursive-text;
+    margin-top: 0;
+
+    & .alert__filepath {
+      --wght: 700;
+      @include global.recursive-text;
+
+      &--cap{
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#Exam Circle outer
+\*--------------------*/
+
+.circle--outer {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #dcdcdc 40%, #bcbcbc 100%);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.7),
+    0 3px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* “EXAM” ring — letters positioned manually */
+  .exam__letter {
+    position: absolute;
+    @include global.gelasio-text;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+  }
+
+   /*First exam manually rotate letters around circle */
+  .exam__one:nth-child(1) { transform: rotate(-36deg) translateY(-2.3rem); }
+  .exam__one:nth-child(2) { transform: rotate(-18deg) translateY(-2.3rem); }
+  .exam__one:nth-child(3) { transform: rotate(0deg) translateY(-2.3rem); }
+  .exam__one:nth-child(4) { transform: rotate(18deg) translateY(-2.3rem); }
+  .exam__one:nth-child(5) { transform: rotate(36deg) translateY(-2.5rem); }
+  /*second exam rotate*/
+  .exam__two:nth-child(6) { transform: rotate(54deg) translateY(-2.3rem); }
+  .exam__two:nth-child(7) { transform: rotate(72deg) translateY(-2.3rem); }
+  .exam__two:nth-child(8) { transform: rotate(90deg) translateY(-2.3rem); }
+  .exam__two:nth-child(9) { transform: rotate(108deg) translateY(-2.3rem); }
+  .exam__two:nth-child(10) { transform: rotate(126deg) translateY(-2.5rem); }
+  /*Third exam rotate*/
+  .exam__three:nth-child(11) { transform: rotate(144deg) translateY(-2.3rem); }
+  .exam__three:nth-child(12) { transform: rotate(162deg) translateY(-2.3rem); }
+  .exam__three:nth-child(13) { transform: rotate(180deg) translateY(-2.3rem); }
+  .exam__three:nth-child(14) { transform: rotate(198deg) translateY(-2.3rem); }
+  .exam__three:nth-child(15) { transform: rotate(216deg) translateY(-2.5rem); }
+  /*Four exam rotates*/
+  .exam__four:nth-child(16) { transform: rotate(234deg) translateY(-2.3rem); }
+  .exam__four:nth-child(17) { transform: rotate(252deg) translateY(-2.3rem); }
+  .exam__four:nth-child(18) { transform: rotate(270deg) translateY(-2.3rem); }
+  .exam__four:nth-child(19) { transform: rotate(288deg) translateY(-2.3rem); }
+  .exam__four:nth-child(20) { transform: rotate(306deg) translateY(-2.5rem); }
+}
+
+.circle--inner{
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f0f0f0 40%, #d0d0d0 100%);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.25),
+    0 1px 3px rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; // ensures it sits above the exam text
+}
+
+
+/*--------------------*\
+#Letter
+\*--------------------*/
+.alert__letter {
+    display: inline-block;
+    text-align: center;
+    letter-spacing: -0.15rem;
+    transform: scaleY(2.3);
+  &--small {
+    //font-size: 1.75rem;
+    transform: scaleY(2.2);
+  }
+
+  &--medium {
+    //font-size: 2rem;
+    transform: scaleY(2.4);
+  }
+
+  &--large {
+    //font-size: 2.25rem;
+    transform: scaleY(2.6);
+  }
+}

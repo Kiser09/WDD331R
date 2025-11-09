@@ -1,0 +1,71 @@
+/*--------------------*\
+#Google fonts Imports
+\*--------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+
+
+
+
+//--------------------*\
+//#Variables
+//--------------------*/
+
+
+@mixin recursive-text {
+  font-family: 'Recursive', sans-serif;
+   font-weight: var(--wght);
+  font-style: oblique var(--slnt);
+  font-variation-settings: 
+    var(--mono), 
+    var(--casl), 
+    var(--wght), 
+    var(--slnt), 
+    var(--crsv);
+}
+
+@mixin gelasio-text {
+  font-family: 'Gelasio', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+/*--------------------*\
+#Global
+\*--------------------*/
+
+/*:root selector is just a storage place for reusable varaibles through CSS Variables.*/
+:root {
+  /*set variable axis values for the recursive font*/
+  --mono: "MONO" 0; /*Monospace: 0=normal width, 1=equal-width (like a typewriter). CTRL whether all letters are the same width or not*/
+  --casl: "CASL" 0; /*Casual: 0=formal, 1=casual. Controls handwritten or professional look.*/
+  --wght: "wght" 300; /*Weight: 300=thin, 800=bold. Controls the thickness of the text*/ 
+  --crsv: "CRSV" 0.5; /*Cursive: 0=no cursive shapes, .5=mixed, 1=full cursive. Controls how much the letters use cursice-style shapes.*/
+  --slnt: 0deg; /*Slant: 0deg=upright -15deg=tilted/italic. Controls how slanted the text is.*/
+
+  /*scale to establish harmony with our spacing. If ratio is changed --s variables will change with the ratio.*/
+  --ratio: 1.5; /*Variable controlling how much something will increase or decrease by.*/
+  --s-5: calc(var(--s-4) / var(--ratio)); /*--s-5 is taking the previous ratio --s-4 and dividing by 1.5 pattern continues till --s0*/
+  --s-4: calc(var(--s-3) / var(--ratio)); /*--s-4 is taking the previous ratio --s-3 and dividing by 1.5*/
+  --s-3: calc(var(--s-2) / var(--ratio)); /*--s-3 is taking the previous ratio --s-2 and dividing by 1.5*/
+  --s-2: calc(var(--s-1) / var(--ratio)); /*--s-2 is taking the previous ratio --s-1 and dividing by 1.5*/
+  --s-1: calc(var(--s0) / var(--ratio)); /*--s-1 is taking the previous ratio --s0 and dividing by 1.5*/
+  --s0: 1rem; //stands for root em. approximately 16px*/
+  --s1: calc(var(--s0) * var(--ratio)); /*--s1 is taking the previous ratio --s0 and multiplying it by 1.5 pattern continues till --s5.*/
+  --s2: calc(var(--s1) * var(--ratio)); /*--s2 is taking the previous ratio --s1 and multiplying it by 1.5*/
+  --s3: calc(var(--s2) * var(--ratio)); /*--s3 is taking the previous ratio --s2 and multiplying it by 1.5*/
+  --s4: calc(var(--s3) * var(--ratio)); /*--s4 is taking the previous ratio --s3 and multiplying it by 1.5*/
+  --s5: calc(var(--s4) * var(--ratio)); /*--s5 is taking the previous ratio --s4 and multiplying it by 1.5*/
+}
+
+
+/*Sets the font family to recursive and sans-serif as a backup.*/
+body {
+  @include gelasio-text;
+  margin: var(--s0) var(--s5);
+}

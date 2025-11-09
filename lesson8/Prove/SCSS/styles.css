@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/*--------------------*\
+#Google fonts Imports
+\*--------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+/*--------------------*\
+#Global
+\*--------------------*/
+/*:root selector is just a storage place for reusable varaibles through CSS Variables.*/
+:root {
+  /*set variable axis values for the recursive font*/
+  --mono: "MONO" 0; /*Monospace: 0=normal width, 1=equal-width (like a typewriter). CTRL whether all letters are the same width or not*/
+  --casl: "CASL" 0; /*Casual: 0=formal, 1=casual. Controls handwritten or professional look.*/
+  --wght: "wght" 300; /*Weight: 300=thin, 800=bold. Controls the thickness of the text*/
+  --crsv: "CRSV" 0.5; /*Cursive: 0=no cursive shapes, .5=mixed, 1=full cursive. Controls how much the letters use cursice-style shapes.*/
+  --slnt: 0deg; /*Slant: 0deg=upright -15deg=tilted/italic. Controls how slanted the text is.*/
+  /*scale to establish harmony with our spacing. If ratio is changed --s variables will change with the ratio.*/
+  --ratio: 1.5; /*Variable controlling how much something will increase or decrease by.*/
+  --s-5: calc(var(--s-4) / var(--ratio)); /*--s-5 is taking the previous ratio --s-4 and dividing by 1.5 pattern continues till --s0*/
+  --s-4: calc(var(--s-3) / var(--ratio)); /*--s-4 is taking the previous ratio --s-3 and dividing by 1.5*/
+  --s-3: calc(var(--s-2) / var(--ratio)); /*--s-3 is taking the previous ratio --s-2 and dividing by 1.5*/
+  --s-2: calc(var(--s-1) / var(--ratio)); /*--s-2 is taking the previous ratio --s-1 and dividing by 1.5*/
+  --s-1: calc(var(--s0) / var(--ratio)); /*--s-1 is taking the previous ratio --s0 and dividing by 1.5*/
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio)); /*--s1 is taking the previous ratio --s0 and multiplying it by 1.5 pattern continues till --s5.*/
+  --s2: calc(var(--s1) * var(--ratio)); /*--s2 is taking the previous ratio --s1 and multiplying it by 1.5*/
+  --s3: calc(var(--s2) * var(--ratio)); /*--s3 is taking the previous ratio --s2 and multiplying it by 1.5*/
+  --s4: calc(var(--s3) * var(--ratio)); /*--s4 is taking the previous ratio --s3 and multiplying it by 1.5*/
+  --s5: calc(var(--s4) * var(--ratio)); /*--s5 is taking the previous ratio --s4 and multiplying it by 1.5*/
+}
+
+/*Sets the font family to recursive and sans-serif as a backup.*/
+body {
+  font-family: "Gelasio", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: var(--s0) var(--s5);
+}
+
+/*--------------------*\
+#alert
+\*--------------------*/
+.alert {
+  position: relative;
+  display: flex;
+  gap: var(--s-2);
+}
+.alert__border {
+  display: flex;
+  border-right: 3px solid grey;
+  align-items: center;
+  height: 5rem;
+  padding-right: var(--s-2);
+  padding-left: var(--s-2);
+  margin-right: var(--s-2);
+}
+.alert__badge--heading {
+  --wght: 700;
+  font-family: "Gelasio", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.alert--description {
+  font-family: "Recursive", sans-serif;
+  font-weight: var(--wght);
+  font-style: oblique var(--slnt);
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+  margin-top: 0;
+}
+.alert--description .alert__filepath {
+  --wght: 700;
+  font-family: "Recursive", sans-serif;
+  font-weight: var(--wght);
+  font-style: oblique var(--slnt);
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+}
+.alert--description .alert__filepath--cap {
+  text-transform: uppercase;
+}
+
+/*--------------------*\
+#Exam Circle outer
+\*--------------------*/
+.circle--outer {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #dcdcdc 40%, #bcbcbc 100%);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.7), 0 3px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* “EXAM” ring — letters positioned manually */
+}
+.circle--outer .exam__letter {
+  position: absolute;
+  font-family: "Gelasio", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+}
+.circle--outer {
+  /*First exam manually rotate letters around circle */
+}
+.circle--outer .exam__one:nth-child(1) {
+  transform: rotate(-36deg) translateY(-2.3rem);
+}
+.circle--outer .exam__one:nth-child(2) {
+  transform: rotate(-18deg) translateY(-2.3rem);
+}
+.circle--outer .exam__one:nth-child(3) {
+  transform: rotate(0deg) translateY(-2.3rem);
+}
+.circle--outer .exam__one:nth-child(4) {
+  transform: rotate(18deg) translateY(-2.3rem);
+}
+.circle--outer .exam__one:nth-child(5) {
+  transform: rotate(36deg) translateY(-2.5rem);
+}
+.circle--outer {
+  /*second exam rotate*/
+}
+.circle--outer .exam__two:nth-child(6) {
+  transform: rotate(54deg) translateY(-2.3rem);
+}
+.circle--outer .exam__two:nth-child(7) {
+  transform: rotate(72deg) translateY(-2.3rem);
+}
+.circle--outer .exam__two:nth-child(8) {
+  transform: rotate(90deg) translateY(-2.3rem);
+}
+.circle--outer .exam__two:nth-child(9) {
+  transform: rotate(108deg) translateY(-2.3rem);
+}
+.circle--outer .exam__two:nth-child(10) {
+  transform: rotate(126deg) translateY(-2.5rem);
+}
+.circle--outer {
+  /*Third exam rotate*/
+}
+.circle--outer .exam__three:nth-child(11) {
+  transform: rotate(144deg) translateY(-2.3rem);
+}
+.circle--outer .exam__three:nth-child(12) {
+  transform: rotate(162deg) translateY(-2.3rem);
+}
+.circle--outer .exam__three:nth-child(13) {
+  transform: rotate(180deg) translateY(-2.3rem);
+}
+.circle--outer .exam__three:nth-child(14) {
+  transform: rotate(198deg) translateY(-2.3rem);
+}
+.circle--outer .exam__three:nth-child(15) {
+  transform: rotate(216deg) translateY(-2.5rem);
+}
+.circle--outer {
+  /*Four exam rotates*/
+}
+.circle--outer .exam__four:nth-child(16) {
+  transform: rotate(234deg) translateY(-2.3rem);
+}
+.circle--outer .exam__four:nth-child(17) {
+  transform: rotate(252deg) translateY(-2.3rem);
+}
+.circle--outer .exam__four:nth-child(18) {
+  transform: rotate(270deg) translateY(-2.3rem);
+}
+.circle--outer .exam__four:nth-child(19) {
+  transform: rotate(288deg) translateY(-2.3rem);
+}
+.circle--outer .exam__four:nth-child(20) {
+  transform: rotate(306deg) translateY(-2.5rem);
+}
+
+.circle--inner {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f0f0f0 40%, #d0d0d0 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/*--------------------*\
+#Letter
+\*--------------------*/
+.alert__letter {
+  display: inline-block;
+  text-align: center;
+  letter-spacing: -0.15rem;
+  transform: scaleY(2.3);
+}
+.alert__letter--small {
+  transform: scaleY(2.2);
+}
+.alert__letter--medium {
+  transform: scaleY(2.4);
+}
+.alert__letter--large {
+  transform: scaleY(2.6);
+}
+
+/*--------------------*\
+#section
+\*--------------------*/
+.section__header {
+  --wght: 700;
+  --mono: 1;
+  --crsv: 0;
+  font-family: "Recursive", sans-serif;
+  font-weight: var(--wght);
+  font-style: oblique var(--slnt);
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+}
+
+/*--------------------*\
+#Example
+\*--------------------*/
+.smaller__text {
+  --mono: 1;
+  font-family: "Recursive", sans-serif;
+  font-weight: var(--wght);
+  font-style: oblique var(--slnt);
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+  font-size: 0.8rem;
+}
+
+/*--------------------*\
+#tips__list
+\*--------------------*/
+.tips__list {
+  list-style: none;
+  padding: var(--s1);
+}
+.tips__list--item {
+  position: relative;
+  margin-bottom: var(--s-2);
+  line-height: 1.5rem;
+}
+.tips__list--item::before {
+  content: "➤";
+  position: absolute;
+  left: calc(var(--s-1) * -2);
+}
+.tips__list--item .tips__bold {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=styles.css.map */

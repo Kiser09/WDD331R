@@ -1,0 +1,65 @@
+//--------------------*\
+//#Import varaibles
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#section
+\*--------------------*/
+
+.section__header {
+  --wght: 700;
+  --mono: 1;
+  --crsv: 0;
+  @include global.recursive-text;
+}
+
+
+
+
+
+/*--------------------*\
+#Example
+\*--------------------*/
+
+.smaller__text {
+  --mono: 1;
+  @include global.recursive-text;
+  font-size: .8rem;
+}
+
+
+
+
+
+/*--------------------*\
+#tips__list
+\*--------------------*/
+
+.tips{
+  &__list {
+    list-style: none;
+    padding: var(--s1);
+
+    &--item {
+      position: relative;
+      margin-bottom: var(--s-2);
+      line-height: 1.5rem;
+
+      &::before {
+        content: "\27A4";
+        position: absolute;
+        left: calc(var(--s-1)*-2);
+      }
+
+      & .tips__bold{
+        font-weight: 700;
+      }
+    }
+  }
+}
