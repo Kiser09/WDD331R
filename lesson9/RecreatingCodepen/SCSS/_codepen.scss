@@ -1,0 +1,44 @@
+//--------------------*\
+//#Import
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#Codepen
+\*--------------------*/
+
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr 1fr auto;
+  height: 100vh;
+  color: white;
+
+  >* {
+    border: 1px solid black;
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#Pen
+\*--------------------*/
+
+.pen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 10px;
+  background: black;
+  border-bottom: 5px solid global.$codepenGrey;
+  color: white;
+  padding: 10px;
+}

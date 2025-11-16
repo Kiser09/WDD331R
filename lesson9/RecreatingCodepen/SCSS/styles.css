@@ -1,0 +1,159 @@
+/*--------------------*\
+#HTML
+\*--------------------*/
+html {
+  box-sizing: border-box;
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-weight: normal;
+  color: #272727;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*--------------------*\
+#Body
+\*--------------------*/
+body {
+  margin: 0;
+}
+
+/*--------------------*\
+#Iframe
+\*--------------------*/
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------*\
+#Headers
+\*--------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/*--------------------*\
+#Codepen
+\*--------------------*/
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr 1fr auto;
+  height: 100vh;
+  color: white;
+}
+.codepen > * {
+  border: 1px solid black;
+}
+
+/*--------------------*\
+#Pen
+\*--------------------*/
+.pen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 10px;
+  background: black;
+  border-bottom: 5px solid #343436;
+  color: white;
+  padding: 10px;
+}
+
+/*--------------------*\
+#Button
+\*--------------------*/
+.button {
+  background: #343436;
+  border: 0;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+}
+.button--small {
+  font-size: 12px;
+  padding: 4px;
+}
+.button--dirty:before {
+  background: #ffc600;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 94%;
+  left: 3px;
+  top: 3px;
+  position: absolute;
+}
+
+/*--------------------*\
+#Code Section
+\*--------------------*/
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
+}
+
+/*--------------------*\
+#Editor
+\*--------------------*/
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  grid-gap: 5px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+.editor__input {
+  resize: none;
+  background: none;
+  border: 0;
+  color: grey;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+/*--------------------*\
+#Preview
+\*--------------------*/
+.preview {
+  display: grid;
+}
+
+/*--------------------*\
+#Settings
+\*--------------------*/
+.settings {
+  padding: 5px;
+  background: #343436;
+  border-top: 1px solid grey;
+}
+
+/*# sourceMappingURL=styles.css.map */

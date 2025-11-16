@@ -1,0 +1,51 @@
+/*--------------------*\
+#Code Section
+\*--------------------*/
+
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
+}
+
+
+
+
+
+
+/*--------------------*\
+#Editor
+\*--------------------*/
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 5px;
+    grid-gap: 5px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  &__code {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  &__number{
+    display: block;
+    padding: 0 10px;
+  }
+
+  &__input {
+    resize: none;
+    background: none;
+    border: 0;
+    color: grey;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

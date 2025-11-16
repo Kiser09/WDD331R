@@ -1,0 +1,39 @@
+//--------------------*\
+//#Import
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#Button
+\*--------------------*/
+
+.button {
+  background: global.$codepenGrey;
+  border: 0;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+
+  &--small {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  &--dirty:before {
+    background: global.$codepenYellow;
+    display: block;
+    content: '';
+    height: 2px;
+    width: calc(100% - 6%);
+    left: 3px;
+    top: 3px;
+    position: absolute;
+  }
+}

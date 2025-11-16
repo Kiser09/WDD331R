@@ -1,0 +1,27 @@
+//--------------------*\
+//#Variable
+//--------------------*/
+
+$tacosYellow: #ffc600;
+
+
+
+
+
+/*--------------------*\
+#Body
+\*--------------------*/
+
+body {
+  font-size: 15px;
+}
+
+button {
+  background: $tacosYellow;
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,11 @@
+/*--------------------*\
+#about
+\*--------------------*/
+
+.about {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: center;
+  background: white;
+  padding: 50px;
+}

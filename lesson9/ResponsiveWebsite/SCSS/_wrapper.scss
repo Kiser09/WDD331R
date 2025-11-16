@@ -1,0 +1,101 @@
+//--------------------*\
+//#Import
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#Top
+\*--------------------*/
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+
+
+
+
+/*--------------------*\
+#Top
+\*--------------------*/
+
+
+.top {
+  display: grid;
+  grid-template-areas: 
+    "hero hero cta1"
+    "hero hero cta2";
+    grid-gap: 20px;
+}
+
+
+
+
+
+/*--------------------*\
+#Hero
+\*--------------------*/
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+  background: white url(../images/taco.jpg);
+  background-size: cover;
+  background-position: bottom right;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  >* {
+    background: global.$tacosYellow;
+    padding: 5px;
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#CTA
+\*--------------------*/
+
+.cta {
+  background: global.$tacosYellow;
+  display: grid;
+  place-items: center;
+  align-content: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.cta1 {
+  grid-area: cta1;
+}
+
+.cta2 {
+  grid-area: cta2;
+}
+
+
+
+
+
+/*--------------------*\
+#Pice
+\*--------------------*/
+
+.price {
+    font-size: 60px;
+    font-weight: 300;
+}

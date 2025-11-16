@@ -1,0 +1,46 @@
+//--------------------*\
+//#Import
+//--------------------*/
+
+@use "global" as global;
+
+
+
+
+
+/*--------------------*\
+#Navigation
+\*--------------------*/
+
+.menu {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 0;
+    grid-gap: 10px;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    background: global.$tacosYellow;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#aria-controls
+\*--------------------*/
+
+[aria-controls="menu-list"] {
+  display: none;
+}
