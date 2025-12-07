@@ -1,0 +1,36 @@
+//--------------------*\
+//#Partial Imports
+//--------------------*/
+
+@use "cardone";
+@use "cardtwo";
+
+
+
+
+
+//--------------------*\
+//#variables
+//--------------------*/
+
+$card-width: 300px;
+$card-ratio: 1.4;
+$card-height: $card-width * $card-ratio;
+
+
+
+
+
+/*--------------------*\
+#card
+\*--------------------*/
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  display: inline-block;
+}
+
+.card-base {
+  stroke-width: 2;
+}

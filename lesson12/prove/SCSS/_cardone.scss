@@ -1,0 +1,97 @@
+//--------------------*\
+//#variables
+//--------------------*/
+
+$card-one-primary: darkred;
+$card-one-accent: gold;
+$diamond-primary: forestgreen;
+$crown-edge: #8c6d1f;
+$crown-jewels: #9966cc;
+$crown-jewel-edge: #BF00FF;
+$sword-shield: #71797E;
+
+
+
+
+
+
+
+/*--------------------*\
+#Card
+\*--------------------*/
+
+.card-base__one{
+  fill: url(#diamondPattern);
+  stroke: $card-one-accent;
+  stroke-width: 1.2;
+}
+
+
+
+
+
+/*--------------------*\
+#Diamond
+\*--------------------*/
+
+.card__one--bg {
+  fill: $card-one-primary;
+}
+
+.diamond {
+  fill: $diamond-primary;
+  stroke: $card-one-accent;
+  stroke-width: .5;
+}
+
+
+
+
+
+/*--------------------*\
+#Shield
+\*--------------------*/
+
+.shield {
+  fill: $sword-shield;
+  stroke: $card-one-accent;
+  stroke-width: .5;
+}
+
+
+
+
+
+/*--------------------*\
+#crown
+\*--------------------*/
+
+.crown {
+  &-body{
+    fill: $card-one-accent;
+    stroke: $crown-edge;
+    stroke-width: 0.5;
+  }
+
+  &-jewels {
+    fill: $crown-jewels;
+    stroke: $crown-jewel-edge;
+    stroke-width: 0.5;
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#Dragon
+\*--------------------*/
+
+.dragon {
+  .dragon-shape {
+    fill: black;                 // dragon color (dark)
+    stroke: $card-one-accent;   // gold outline to match crest
+    stroke-width: 0.8;
+  }
+}

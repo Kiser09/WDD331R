@@ -1,0 +1,95 @@
+/*-------------------*\
+#root
+\*-------------------*/
+:root {
+  --quote-max-width: 900px;
+  --quote-min-width: 320px;
+  --quote-preferred-width: 770%;
+  --quote-emphasis: 800;
+  --author-gap: 1.5em;
+  /*Light theme default*/
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+/*-------------------*\
+#customer-quote
+\*-------------------*/
+.customer-quote {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: var(--background, #fff);
+  /*default light mode colors*/
+  background: var(--bg);
+  color: var(--text);
+}
+
+/*-------------------*\
+#quote-box
+\*-------------------*/
+.quote-box {
+  width: clamp(var(--min-width), var(--preferred-width), var(--max-width)); /*Clamp makes quote box responsive */
+  margin: 0 auto; /*centers the box horizontally*/
+  display: flex; /*Sets the quote box to flex allowing text and author image side by side.*/
+  padding: 3em; /*adding space within the quote box */
+  gap: 3em; /*space between image and text*/
+}
+.quote-box__quote {
+  /*Creates fluid responsive text sizing. variables are used in styles.scss page creating responsive text.*/
+  --fluid-type-min: 1.2rem;
+  --fluid-type-target: 2.5vw;
+  --fluid-type-max: 2.4rem;
+  line-height: 1.4;
+}
+.quote-box__quote .quote-box__emphasis {
+  font-weight: var(--quote-emphasis); /*emphasis for the span within the quote*/
+}
+.quote-box__quote .quote-box__author {
+  display: inline-flex; /*Display to allow gap between author and career.*/
+  gap: var(--author-gap);
+  font-size: 1.25em; /*font size reduced but will be responsive with the fluid variables.*/
+  font-weight: var(--quote-emphasis);
+}
+.quote-box__quote .quote-box__author .quote-box__career {
+  font-weight: 400;
+}
+.quote-box__quote::before {
+  filter: brightness(var(--brightness, 100%));
+}
+.quote-box__image {
+  order: -1; /*places image before quote */
+  align-self: center; /*centers quote*/
+}
+.quote-box__image img {
+  /*make width and height same and creates a round image.*/
+  width: clamp(60px, 12vw, 120px);
+  height: clamp(60px, 12vw, 120px);
+  border-radius: 100%;
+}
+
+/*-------------------*\
+#quote-box
+\*-------------------*/
+/*checkbox switch for light and dark mode*/
+#themeSwitch:checked ~ .customer-quote {
+  --bg: #222;
+  --text: white;
+  --brightness: 500%;
+}
+
+/*--------------------*\
+#font-size clamp
+\*--------------------*/
+/*Sets responsive text sizes for the webpage. Affects text html elements.*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: clamp(var(--fluid-type-min, 1rem), 1rem + var(--fluid-type-target, 3vw), var(--fluid-type-max, 1.3rem));
+}
+
+/*# sourceMappingURL=styles.css.map */

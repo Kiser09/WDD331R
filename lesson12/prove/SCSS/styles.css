@@ -1,0 +1,102 @@
+/*--------------------*\
+#Card
+\*--------------------*/
+.card-base__one {
+  fill: url(#diamondPattern);
+  stroke: gold;
+  stroke-width: 1.2;
+}
+
+/*--------------------*\
+#Diamond
+\*--------------------*/
+.card__one--bg {
+  fill: darkred;
+}
+
+.diamond {
+  fill: forestgreen;
+  stroke: gold;
+  stroke-width: 0.5;
+}
+
+/*--------------------*\
+#Shield
+\*--------------------*/
+.shield {
+  fill: #71797E;
+  stroke: gold;
+  stroke-width: 0.5;
+}
+
+/*--------------------*\
+#crown
+\*--------------------*/
+.crown-body {
+  fill: gold;
+  stroke: #8c6d1f;
+  stroke-width: 0.5;
+}
+.crown-jewels {
+  fill: #9966cc;
+  stroke: #BF00FF;
+  stroke-width: 0.5;
+}
+
+/*--------------------*\
+#Dragon
+\*--------------------*/
+.dragon .dragon-shape {
+  fill: black;
+  stroke: gold;
+  stroke-width: 0.8;
+}
+
+/*--------------------*\
+#Card
+\*--------------------*/
+.card-base__two {
+  fill: url(#honeycombPattern);
+  stroke: silver;
+}
+
+/*--------------------*\
+#Honeycomb
+\*--------------------*/
+.card__two--bg {
+  fill: #BF00FF;
+}
+
+#honeycombPattern .hex {
+  fill: darkblue;
+  stroke: silver;
+  stroke-width: 0.5;
+}
+
+/*--------------------*\
+#BeeHive
+\*--------------------*/
+.beehive ellipse {
+  fill: #cc8f00;
+  stroke: saddlebrown;
+  stroke-width: 1.2;
+}
+.beehive .hive-hole {
+  fill: #2b2b2b;
+  stroke: black;
+}
+
+/*--------------------*\
+#card
+\*--------------------*/
+.card {
+  width: 300px;
+  height: 420px;
+  display: inline-block;
+}
+
+.card-base {
+  stroke-width: 2;
+}
+
+/*# sourceMappingURL=styles.css.map */

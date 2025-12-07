@@ -1,0 +1,66 @@
+//--------------------*\
+//#variables
+//--------------------*/
+
+$card-two-primary: darkblue;
+$card-two-accent: silver;
+$royal-purple: #BF00FF;
+$deseret: #cc8f00;
+$hiveoutline: saddlebrown;
+$hiveEnterance: #2b2b2b;
+
+
+
+
+
+
+/*--------------------*\
+#Card
+\*--------------------*/
+
+.card-base__two{
+  fill: url(#honeycombPattern);
+  stroke: $card-two-accent;
+}
+
+
+
+
+
+/*--------------------*\
+#Honeycomb
+\*--------------------*/
+
+.card__two--bg {
+    fill: $royal-purple;
+}
+
+
+#honeycombPattern {
+  .hex {
+    fill: $card-two-primary;
+    stroke: $card-two-accent;
+    stroke-width: 0.5;
+  }
+}
+
+
+
+
+
+/*--------------------*\
+#BeeHive
+\*--------------------*/
+
+.beehive {
+  ellipse {
+    fill: $deseret; // hive color
+    stroke: $hiveoutline; // outline
+    stroke-width: 1.2;
+  }
+
+  .hive-hole {
+    fill: $hiveEnterance; // dark entrance
+    stroke: black;
+  }
+}

@@ -1,0 +1,81 @@
+:root { /*top element of webpage acts as the global storage box for the project.*/
+  --max-width: 900px; /*variable for the max width set to 900px.*/
+  --min-width: 300px; /*variable for the min width set to 300px*/
+  --preferred-width: 80%; /*variable set to 80% falling inline between max and min values used for clamp.*/
+  //could also create a clamp variable = --width-clamp: clamp(300px, 80%, 900px); this method is less flexible than what is used. 
+  --quoteColor: #b3d4e6; /*color variable.*/ 
+}
+
+.section-quote {
+  /*Doesnt allow the background to shrink more than the quote-box.*/
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.quote-box {
+  border-radius: 20px; /*makes the border corners round.*/
+  border: 4px solid var(--quoteColor); /*border for around the quote box solid using the color varaible.*/
+  width: clamp(var(--min-width), var(--preferred-width), var(--max-width)); /*Clamp makes quote box responsive */
+  margin: 0 auto; /*centers the box horizontally*/
+  display: flex; /*Sets the quote box to flex allowing text and author image side by side.*/
+  padding: 3em; /*adding space within the quote box */
+  gap: 1em; /*space between image and text*/
+  &__quote {
+    position: relative; /*creates positioning based on quote icon*/
+    /*Creates fluid responsive text sizing. variables are used in styles.scss page creating responsive text.*/
+    --fluid-type-min: 1.2rem;
+    --fluid-type-target: 2.5vw;
+    --fluid-type-max: 2.4rem;
+    p {
+      filter: brightness(var(--brightness, 100%)); /*changes brightness of text based on theme (dark or light)*/
+    }
+
+    &::before { /*creates fake element before .quote-box__quote text*/
+      --quoteSize: 62px; /*sets the variable for the quote image size*/
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.458 20.544'%3E%3Cpath fill='%23333' d='M11.37 20.544v-9.792c-.043-1.408.16-2.73.607-3.968a10.31 10.31 0 0 1 1.889-3.265 10.414 10.414 0 0 1 2.912-2.336 10.382 10.382 0 0 1 3.68-1.184v4.224c-1.622.556-2.731 1.376-3.328 2.464-.598 1.089-.896 2.423-.896 4h4.224v9.856H11.37zm-11.364 0v-9.792c-.043-1.408.16-2.73.608-3.968A10.311 10.311 0 0 1 2.502 3.52a10.414 10.414 0 0 1 2.912-2.336A10.369 10.369 0 0 1 9.094 0v4.224C7.472 4.779 6.363 5.6 5.766 6.688c-.598 1.089-.896 2.423-.896 4h4.224v9.856H.006z'/%3E%3C/svg%3E");
+      content: ""; /*requried to make the pseudo-element appear on the page*/
+      filter: brightness(var(--brightness, 100%)); /*changes brightness of icon based on theme (dark or light)*/
+      height: var(--quoteSize); /*uses --quoteSize variable for height size*/
+      width: var(--quoteSize); /*uses --quoteSize variable for width size*/
+      position: absolute; /*moves icon outside the text block*/
+      left: -90px; /*movies it to the left */
+      top: 0; /*sets svg at the top of quote-box.*/
+    }
+    &-author {
+      text-align: right; /*aligns authors name to the right under the quote.*/
+    }
+  }
+  &__author-image {
+    /*media query for small screens repositioning image downward toward the authors name. */
+    @media (max-width: 680px) {
+      align-self: flex-end; 
+    }
+    & img {
+        /*moves the picture upward and overlaps with the border slightly*/
+      position: relative;
+      top: -4em;/*positions the top of the image outside the border of quote-box into the above section.*/
+      width: 190px; /*standarize image width to aid with quote size consistency. */
+
+      /*border around the image to match that of quote-box border.*/
+      border: 4px solid var(--quoteColor);
+      box-shadow: 10px 10px 0 var(--quoteColor);
+
+      /*media query for mobile devices makes the image small*/
+      @media (max-width: 680px) {
+        border-radius: 100%; /*image border becomes a circle*/
+        box-shadow: initial; /*removes box shadow for mobile media*/
+        width: 80px; /*image width becomes on 80px wide.*/
+        top: 0; /*removes top to align more with the author's name. */
+      }
+    }
+  }
+}
+
+/*If section is called .dark-section overriddes background and to become darkgrey and text white. */
+.dark-section {
+  --quoteColor: yellow; /*changes the quoteColor variable to yellow*/
+  --brightness: 500%; /*changes brightness of text and icon based on theme (dark or light)*/
+  background-color: #333; /*background changes to dark grey*/
+  color: white; /*text color is changed to white. */
+}
